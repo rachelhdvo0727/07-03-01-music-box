@@ -1,20 +1,122 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="da">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,800,900|Raleway:400,500,600,700&display=swap" rel="stylesheet">
     <title></title>
-    <style></style>
+    <style>
+        :root {
+            --main-contentbox-color: #099EAD;
+            --footer-color: #E6D844;
+            --btn-color: #DFA0C4;
+            --headline-color: #940755;
+            --bg-color: #ffffff;
+            --h1-h2-font: 'Poppins', sans-serif;
+            --othertext-font: 'Raleway', sans-serif;
+        }
+
+        body {
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        nav {
+            text-align: center;
+            margin: 2vw;
+        }
+
+        header {
+            background-image: url(assets/single_og_playlist_splash1.jpg);
+            background-size: cover;
+            width: 100vw;
+            height: 60vw;
+            background-position: 45% 40%;
+        }
+
+        h1 {
+            font-family: var(--h1-h2-font);
+            font-size: 170%;
+        }
+
+        h2 {
+            font-family: var(--h1-h2-font);
+            font-size: 150%;
+        }
+
+        p {
+            font-family: var(--othertext-font);
+        }
+
+        #logo {
+            width: 30%;
+            margin: 2.5vw 0 0 2.5vw;
+        }
+
+        #listeindhold {
+            display: inline-grid;
+            grid-gap: 10vw;
+            margin: 5vw;
+        }
+
+        article {
+            background-color: #80C4CB;
+            box-shadow: 1vw 2vw 2vw #A7A7A7;
+        }
+
+        .indhold_boks {
+            padding: 0 3vw 2vw;
+        }
+
+        button {
+            background-color: var(--btn-color);
+            border: none;
+            height: 6vw;
+            width: auto;
+            border-radius: 3vw;
+            font-family: var(--othertext-font);
+            font-size: 70%;
+            font-weight: 700;
+            color: var(--bg-color);
+            margin: 1vw;
+        }
+
+        footer {
+            background-color: var(--footer-color);
+            height: 10vw;
+            width: auto;
+            padding-top: 1vw;
+            text-align: center;
+        }
+
+        @media screen and (min-width:600px) {
+            #listeindhold {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (min-width:780px) {
+            #listeindhold {
+                grid-template-columns: repeat(4, 2fr);
+            }
+        }
+
+    </style>
 </head>
 
 <body>
     <header>
-        <img id="logo" src="" alt="">
+        <section id="splash"></section>
+        <img id="logo" src="assets/logo.svg" alt="logo_music_box">
+        <h1></h1>
     </header>
-    <section id="kat">
+    <section id="filtermenu">
         <nav>
-            <button id="filter"></button>
+            <button id="filterknap vagt">Filter</button>
             <div id="menu" class="hidden">
                 <button>Pop</button>
                 <button>EDM</button>
@@ -28,20 +130,60 @@
             </div>
         </nav>
     </section>
-    <section id="list">
-        <template>
-            <article class="content">
-                <img>
-                <h3></h3>
+
+    <section id="listeindhold"></section>
+
+    <template>
+        <article>
+            <img src="" alt="">
+            <div class="indhold_boks">
+                <h2></h2>
                 <p class="kunstner"></p>
                 <p class="album"></p>
-                <p class="albumnr"></p>
                 <p class="tid"></p>
-                <img id="play" src="" alt="play button">
-            </article>
-        </template>
-    </section>
-    <script></script>
+                <img id="spille-knap" src="" alt="play button">
+            </div>
+        </article>
+    </template>
+    <footer>
+        <p>@2019 MUSIC BOX</p>
+    </footer>
+    <script>
+        let sanger;
+        let filter = "alle";
+        const sangListe = document.querySelector("#listeindhold");
+        const sangTemplate = document.querySelector("template");
+
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            const minJson = await fetch("https://spreadsheets.google.com/feeds/list/1Y6c_YOI5XmIz6zh6OT_943mOkupPzIyyYaDALWxi6LQ/od6/public/values?alt=json&fbclid=IwAR3GvdQvKcjYnqT18MlJN99RDpNzlUmAW68sfh6Vl2ChXgjJi_lKYb9sou8");
+
+            sanger = await minJson.json();
+            console.log(sanger);
+
+            visSangListen();
+        }
+
+        function visSangListen() {
+            sangListe.innerHTML = "";
+
+            sanger.feed.entry.forEach(sang => {
+                if (filter == "alle" || filter == sang.gsx$uri.$t) {
+                    let klon = sangTemplate.cloneNode(true).content;
+
+                    klon.querySelector("img").src = "albums-billeder/" + sang.gsx$albumcover.$t + "-album.png";
+                    klon.querySelector("h2").textContent = sang.gsx$navn.$t;
+                    klon.querySelector(".kunstner").textContent = sang.gsx$kunstner.$t;
+                    klon.querySelector(".album").textContent = sang.gsx$album.$t;
+                    klon.querySelector(".tid").textContent = sang.gsx$varihed.$t;
+                    //klon.querySelector("img").src = "assets/spille-knap.svg";
+                    sangListe.appendChild(klon);
+                }
+            })
+        }
+
+    </script>
 </body>
 
 </html>
