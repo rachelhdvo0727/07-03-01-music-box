@@ -1,0 +1,22 @@
+:root {
+    --main-color: #099EAD;
+    --footer-color: #E6D844;
+    --btn-color: #DFA0C4;
+    --headline-color: #940755;
+    --bg-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+/************************HEADER**********************/
+
+header {
+    background: url();
+}
