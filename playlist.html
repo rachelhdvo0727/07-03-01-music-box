@@ -47,9 +47,12 @@
         }
 
         article {
-            background-color: --main-contentbox-color;
+            background-color: var(--main-contentbox-color);
             opacity: 45%;
+        }
 
+        button {
+            background-color: --btn-color;
         }
 
         @media screen and (min-width:600px) {
@@ -75,7 +78,7 @@
     </header>
     <section id="filtermenu">
         <nav>
-            <button id="filter">Filter</button>
+            <button id="filterknap vagt">Filter</button>
             <div id="menu" class="hidden">
                 <button>Pop</button>
                 <button>EDM</button>
@@ -89,6 +92,7 @@
             </div>
         </nav>
     </section>
+
     <section id="listeindhold"></section>
 
     <template>
