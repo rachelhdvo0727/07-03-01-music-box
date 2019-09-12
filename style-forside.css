@@ -17,6 +17,73 @@ img {
 
 /************************HEADER**********************/
 
-header {
-    background: url();
+.header {
+    background: url(assets/forside-splash.jpg);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    padding: 100px;
+
+}
+
+#logo {
+    object-fit: contain;
+    float: left;
+    width: 100%;
+}
+
+/************************GRID**********************/
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100vh;
+    grid-template-areas: "content hele-listen subangi""content Rachel Rune";
+    grid-gap: 10vh;
+    margin: 10vh;
+
+}
+
+.content {
+    grid-area: content;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.hele-listen {
+    grid-area: hele-listen;
+    background-image: url(albums-billeder/heleListen.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.subangi {
+    grid-area: subangi;
+    background-image: url(albums-billeder/Subangi.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.Rachel {
+    grid-area: Rachel;
+    background-image: url(albums-billeder/Rachel.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.Rune {
+    grid-area: Rune;
+    background-image: url(albums-billeder/Rune.jpg);
+    object-fit: contain;
+    background-size: cover;
+    background-position: center;
+}
+
+.textimg {
+    text-align: center;
+    padding-top: 80%;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 2vh
 }
