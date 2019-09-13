@@ -6,9 +6,11 @@
     --bg-color: #ffffff;
 }
 
-* {
+body {
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
+
+
 }
 
 img {
@@ -16,74 +18,137 @@ img {
 }
 
 /************************HEADER**********************/
-
-.header {
-    background: url(assets/forside-splash.jpg);
-    width: 100%;
+header {
+    background-image: url(assets/single_og_playlist_splash1.jpg);
     background-size: cover;
-    background-position: center;
-    padding: 100px;
-
+    width: 100vw;
+    height: 30vw;
+    background-position: 45% 40%;
 }
 
 #logo {
     object-fit: contain;
     float: left;
-    width: 100%;
+    width: 10%;
 }
 
 /************************GRID**********************/
+
 .grid-container {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 100vh;
-    grid-template-areas: "content hele-listen subangi""content Rachel Rune";
-    grid-gap: 10vh;
-    margin: 10vh;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+
 
 }
 
-.content {
-    grid-area: content;
-    font-family: 'Raleway', sans-serif;
-
+.gridVenstre {
+    padding: 5vh 5vw 5vw 5wh;
+    text-align: center;
 }
+
+
+.gridHoejre {
+    min-height: 50vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    grid-auto-rows: 1fr;
+    margin: 10px
+}
+
+
+.content {}
 
 .hele-listen {
-    grid-area: hele-listen;
-    background-image: url(albums-billeder/heleListen.jpg);
+    background-image: url(assets/rune1.jpg);
     background-size: cover;
-    background-position: center;
+
+
 }
 
 .subangi {
-    grid-area: subangi;
-    background-image: url(albums-billeder/Subangi.jpg);
+    background-image: url(assets/rune2.jpg);
     background-size: cover;
-    background-position: center;
-}
 
-.Rachel {
-    grid-area: Rachel;
-    background-image: url(albums-billeder/Rachel.jpg);
-    background-size: cover;
-    background-position: center;
+
 
 }
 
-.Rune {
-    grid-area: Rune;
-    background-image: url(albums-billeder/Rune.jpg);
-    object-fit: contain;
+.rachel {
+    background-image: url(assets/rune3.jpg);
     background-size: cover;
-    background-position: center;
+
+
+}
+
+.rune {
+    background-image: url(assets/rune4.jpg);
+    background-size: cover;
 }
 
 .textimg {
     text-align: center;
-    padding-top: 80%;
+    padding-top: 10rem;
     font-family: 'Raleway', sans-serif;
     color: white;
-    font-size: 2vh
+    font-size: 2vh;
+    margin: auto;
+    font-size: 1rem
+}
+
+.footer {
+    background-color: yellow;
+}
+
+@media screen and (min-width:680px) {
+
+
+    .gridVenstre {}
+
+
+    .gridHoejre {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4px;
+
+
+    }
+
+
+    .content {
+        background-color: blue;
+
+
+    }
+
+
+}
+
+@media screen and (min-width:900px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        grid-auto-rows: 1fr;
+
+    }
+
+    .gridVenstre {}
+
+
+    .gridHoejre {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+
+    }
+
+
+    .content {
+        background-color: blue;
+
+
+    }
+
 }
