@@ -63,16 +63,17 @@
         #listeindhold {
             display: inline-grid;
             grid-gap: 10vw;
-            margin: 5vw;
+            margin: 0 6vw 8vw 6vw;
         }
 
         article {
             background-color: #80C4CB;
+            margin: 3vw;
             box-shadow: 1vw 2vw 2vw #A7A7A7;
         }
 
         .indhold_boks {
-            padding: 0 3vw 2vw;
+            padding: 0 3.5vw 2vw;
         }
 
         .valgt {
@@ -99,7 +100,7 @@
             height: 9.5vw;
             position: relative;
             top: -2vw;
-            left: 75vw;
+            left: 66vw;
         }
 
         #filterknap {
@@ -108,8 +109,8 @@
         }
 
         #menu {
-            background-color: var(--btn-color);
-            position: fixed;
+            background-color: transparent;
+            position: relative;
         }
 
         .hidden {
@@ -132,7 +133,69 @@
 
         @media screen and (min-width:780px) {
             #listeindhold {
-                grid-template-columns: repeat(4, 2fr);
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 3vw;
+                margin: 3.5vw;
+            }
+
+            nav {
+                margin: 1vw;
+            }
+
+            button {
+                height: 2.8vw;
+                width: 16vw;
+                font-size: 100%;
+                font-weight: 700;
+                margin: 1vw;
+            }
+
+            h1 {
+                font-size: 550%;
+                margin: 5vw 0 20vw 20vw;
+            }
+
+            h2 {
+                font-size: 150%;
+            }
+
+            p {
+                font-size: 100%;
+            }
+
+            #spille-knap {
+                width: 3vw;
+                height: 2.5vw;
+                position: relative;
+                top: 1vw;
+                left: 15vw;
+            }
+
+            #menu {
+                display: list-item;
+                margin: 4vw 0 0 0;
+            }
+
+            #filterknap {
+                display: none;
+            }
+
+            header {
+                width: 100vw;
+                height: 40vw;
+                background-position: 45% 80%;
+            }
+
+            #logo {
+                width: 20%;
+            }
+
+            footer {
+                height: 5vw;
+            }
+
+            article {
+                box-shadow: 0.5vw 1vw 2vw #A7A7A7;
             }
         }
     </style>
