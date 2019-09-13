@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-single.css">
+    <link rel="stylesheet" href="https://use.typekit.net/huy4euv.css">
+
+
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="assets/logo.svg">
+        <h1 class="titel"></h1>
+    </header>
+    <main id="singlepage">
+        <img class="back" src="assets/pil.svg">
+        <section class="indhold">
+            <article class="full">
+                <img class="image" src="" alt="">
+                <div class="single">
+                    <h2></h2>
+                    <h3></h3>
+                    <p class="lyrics"></p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+    <footer>Music box &#169;</footer>
+
+    <script>
+        let songs;
+        let urlParams = new URLSearchParams(window.location.search);
+        let uri = urlParams.get("uri");
+        let filter = "alle";
+        document.addEventListener("DOMContentLoaded", getJson);
+
+        async function getJson() {
+            let jsonData = await fetch("https://spreadsheets.google.com/feeds/list/1Y6c_YOI5XmIz6zh6OT_943mOkupPzIyyYaDALWxi6LQ/od6/public/values?alt=json");
+            songs = await jsonData.json();
+            visLyrics();
+
+        }
+
+        function visLyrics() {
+
+
+            document.querySelector(".back").addEventListener("click", () => {
+                history.back();
+            })
+            songs.feed.entry.forEach(song => {
+                if (song.gsx$uri.$t == uri) {
+                    document.querySelector(".full h2").textContent = song.gsx$navn.$t;
+                    document.querySelector(".full h3").textContent = song.gsx$album.$t;
+                    document.querySelector(".titel").textContent = song.gsx$navn.$t;
+
+                    document.querySelector(".image").src = `albums-billeder/${song.gsx$albumcover.$t}.png`;
+
+                    document.querySelector(".image").alt = song.gsx$albumcover.$t;
+                    document.querySelector(".lyrics").innerHTML = `<pre>${song.gsx$lyrics.$t}</pre>`;
+                }
+            });
+        }
+
+
+        function buttons() {
+            document.querySelectorAll(".filter").forEach(btn => {
+                btn.addEventListener("click", sort);
+            })
+        }
+
+        function sort() {
+            filter = this.dataset.kategori;
+            document.querySelector("#kat").textContent = this.textContent;
+            document.querySelectorAll(".filter").forEach(btn => {
+                btn.classList.remove("valgt");
+            })
+            this.classList.add("valgt");
+            visMenu();
+        }
+    </script>
+</body></html>

@@ -1,0 +1,143 @@
+:root {
+    --main-color: #6ECBD2;
+    --footer-color: #F9F4CA;
+    --btn-color: #DFA0C4;
+    --headline-color: #940755;
+    --bg-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+
+    margin: 0 auto;
+}
+
+/***********************HEADER***************/
+
+header {
+    background: url(assets/single_og_playlist_splash1.jpg);
+    background-size: cover;
+    height: 35vh;
+    position: relative;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#logo {
+    /* width: 28vw;
+    height: 15vw;*/
+    width: 170px;
+    height: 88.39px;
+    margin: 1vw;
+}
+
+#singlepage {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.back {
+    width: 2vw;
+    margin: 2vw;
+    transform: rotate(180deg);
+}
+
+.indhold {}
+
+.full {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+
+.titel {
+    color: var(--bg-color);
+    font-size: 4rem;
+    font-family: poppins, sans-serif;
+    margin-left: 1rem;
+
+}
+
+p {
+    font-family: raleway, sans-serif;
+}
+
+.image {
+    border-radius: 10%;
+    max-width: 300px;
+    width: 60vw;
+    z-index: 1;
+
+}
+
+.single {
+    background-color: var(--main-color);
+    position: relative;
+    width: 90vw;
+    padding: 12rem 1rem 1rem;
+    margin-top: -10rem;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+
+
+
+}
+
+.single h2 {
+    color: var(--headline-color);
+    font-family: poppins, sans-serif;
+}
+
+.single h3 {
+    color: var(--headline-color);
+    font-family: poppins, sans-serif;
+    font-size: 1rem;
+
+}
+
+footer {
+    background-color: var(--footer-color);
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+pre {
+    font-family: raleway, sans-serif;
+    text-align: center;
+
+
+
+}
+
+@media only screen and (min-width: 900px) {
+    .titel {
+        text-align: center;
+    }
+
+    header {
+        height: 45vh;
+    }
+
+
+}

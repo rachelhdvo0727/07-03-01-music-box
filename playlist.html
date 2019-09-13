@@ -40,7 +40,10 @@
 
         h1 {
             font-family: var(--h1-h2-font);
-            font-size: 170%;
+            font-size: 270%;
+            color: #ffffff;
+            text-transform: uppercase;
+            padding: 0 20vw 0 2vw;
         }
 
         h2 {
@@ -60,29 +63,58 @@
         #listeindhold {
             display: inline-grid;
             grid-gap: 10vw;
-            margin: 5vw;
+            margin: 0 6vw 8vw 6vw;
         }
 
         article {
             background-color: #80C4CB;
+            margin: 3vw;
             box-shadow: 1vw 2vw 2vw #A7A7A7;
         }
 
         .indhold_boks {
-            padding: 0 3vw 2vw;
+            padding: 0 3.5vw 2vw;
+        }
+
+        .valgt {
+            background-color: var(--headline-color);
+            font-family: var(--othertext-font);
+            color: white;
         }
 
         button {
             background-color: var(--btn-color);
             border: none;
             height: 6vw;
-            width: auto;
+            width: 28vw;
             border-radius: 3vw;
             font-family: var(--othertext-font);
-            font-size: 70%;
+            font-size: 80%;
             font-weight: 700;
             color: var(--bg-color);
             margin: 1vw;
+        }
+
+        #spille-knap {
+            width: 7vw;
+            height: 9.5vw;
+            position: relative;
+            top: -2vw;
+            left: 66vw;
+        }
+
+        #filterknap {
+            position: relative;
+            left: 30vw;
+        }
+
+        #menu {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .hidden {
+            display: none;
         }
 
         footer {
@@ -100,11 +132,74 @@
         }
 
         @media screen and (min-width:780px) {
+            header {
+                width: 100vw;
+                height: 35vw;
+                background-position: 45% 90%;
+            }
+
+            #logo {
+                width: 20%;
+            }
+
             #listeindhold {
-                grid-template-columns: repeat(4, 2fr);
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 3vw;
+                margin: 3.5vw;
+            }
+
+            nav {
+                margin: 1vw;
+            }
+
+            button {
+                height: 2.8vw;
+                width: 16vw;
+                font-size: 100%;
+                font-weight: 700;
+                margin: 1vw;
+            }
+
+            h1 {
+                font-size: 550%;
+                margin: 5vw 0 20vw 20vw;
+            }
+
+            h2 {
+                font-size: 150%;
+            }
+
+            p {
+                font-size: 100%;
+            }
+
+            #spille-knap {
+                width: 3vw;
+                height: 2.5vw;
+                position: relative;
+                top: 1vw;
+                left: 15vw;
+            }
+
+            #menu {
+                display: list-item;
+                margin: 4vw 0 0 0;
+            }
+
+            #filterknap {
+                display: none;
+            }
+
+
+
+            footer {
+                height: 5vw;
+            }
+
+            article {
+                box-shadow: 0.5vw 1vw 2vw #A7A7A7;
             }
         }
-
     </style>
 </head>
 
@@ -116,17 +211,18 @@
     </header>
     <section id="filtermenu">
         <nav>
-            <button id="filterknap vagt">Filter</button>
+            <button id="filterknap">Filter</button>
             <div id="menu" class="hidden">
-                <button>Pop</button>
-                <button>EDM</button>
-                <button>Indie rock</button>
-                <button>Hard rock</button>
-                <button>Punk-rock</button>
-                <button>Alternativ metal</button>
-                <button>Alternativ rock</button>
-                <button>Heavy metal</button>
-                <button>Andet</button>
+                <button class="filter vagt" data-genre="alle">Alle</button>
+                <button class="filter" data-genre="pop">Pop</button>
+                <button class="filter" data-genre="soul">Soul</button>
+                <button class="filter" data-genre="pop">EDM</button>
+                <button class="filter" data-genre="edm">Indie rock</button>
+                <button class="filter" data-genre="hard-rock">Hard rock</button>
+                <button class="filter" data-genre="punk-rock">Punk-rock</button>
+                <button class="filter" data-genre="alternative-metal">Alternative metal</button>
+                <button class="filter" data-genre="alternative-rock">Alternative rock</button>
+                <button class="filter" data-genre="heavy-metal">Heavy metal</button>
             </div>
         </nav>
     </section>
@@ -148,9 +244,10 @@
     <footer>
         <p>@2019 MUSIC BOX</p>
     </footer>
+
     <script>
         let sanger;
-        let filter = "alle";
+        let filtergenre = "alle";
         const sangListe = document.querySelector("#listeindhold");
         const sangTemplate = document.querySelector("template");
 
@@ -163,13 +260,23 @@
             console.log(sanger);
 
             visSangListen();
+            klikFilter();
+            clickonFilterknap();
+        }
+
+        function clickonFilterknap() {
+            document.querySelector("#filterknap").addEventListener("click", toggleFilterlist);
+        }
+
+        function toggleFilterlist() {
+            document.querySelector("#menu").classList.toggle("hidden");
         }
 
         function visSangListen() {
             sangListe.innerHTML = "";
 
             sanger.feed.entry.forEach(sang => {
-                if (filter == "alle" || filter == sang.gsx$uri.$t) {
+                if (filtergenre == "alle" || filtergenre == sang.gsx$genre.$t) {
                     let klon = sangTemplate.cloneNode(true).content;
 
                     klon.querySelector("img").src = "albums-billeder/" + sang.gsx$albumcover.$t + "-album.png";
@@ -177,13 +284,29 @@
                     klon.querySelector(".kunstner").textContent = sang.gsx$kunstner.$t;
                     klon.querySelector(".album").textContent = sang.gsx$album.$t;
                     klon.querySelector(".tid").textContent = sang.gsx$varihed.$t;
-                    //klon.querySelector("img").src = "assets/spille-knap.svg";
+                    klon.querySelector("#spille-knap").src = "assets/spille-knap.svg";
                     sangListe.appendChild(klon);
                 }
             })
         }
 
-    </script>
-</body>
+        function klikFilter() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtreringGenre);
+            })
+        }
 
-</html>
+        function filtreringGenre() {
+            filtergenre = this.dataset.genre;
+
+            document.querySelector("h1").textContent = this.textContent;
+
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            });
+
+            this.classList.add("valgt");
+            visSangListen();
+        }
+    </script>
+</body></html>
