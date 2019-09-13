@@ -1,0 +1,108 @@
+:root {
+    --main-color: #6ECBD2;
+    --footer-color: #E6D844;
+    --btn-color: #DFA0C4;
+    --headline-color: #940755;
+    --bg-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+/***********************HEADER***************/
+
+header {
+    background: url(assets/single_og_playlist_splash1.jpg);
+    background-size: cover;
+    height: 35vh;
+    position: relative;
+    background-position: center;
+}
+
+#logo {
+    width: 28vw;
+    height: 15vw;
+    margin: 1vw;
+}
+
+.back {
+    width: 2vw;
+    margin: 2vw;
+    transform: rotate(180deg);
+}
+
+.lyrics {
+    width: 130px;
+
+}
+
+.full {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+}
+
+
+.titel {
+    color: var(--bg-color);
+    font-size: 4rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: poppins, sans-serif;
+    margin: 0.5rem;
+
+}
+
+p {
+    font-family: raleway, sans-serif;
+}
+
+.image {
+    border-radius: 10%;
+    width: 60vw;
+
+
+}
+
+.single {
+    background-color: var(--main-color);
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    width: 90vw;
+    padding: 1rem;
+
+
+}
+
+.single h2 {
+    color: var(--headline-color);
+    font-family: poppins, sans-serif;
+}
+
+.single h3 {
+    color: var(--headline-color);
+    font-family: poppins, sans-serif;
+    font-size: 1rem;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--footer-color);
+    color: white;
+    text-align: center;
+}
