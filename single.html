@@ -58,9 +58,9 @@
                     document.querySelector(".titel").textContent = song.gsx$navn.$t;
 
                     document.querySelector(".image").src = `albums-billeder/${song.gsx$albumcover.$t}.png`;
-                    document.querySelector(".full .image").alt = song.gsx$albumCover.$t;
-                    document.querySelector(".lyrics").textContent =
-                        song.gsx$lyrics.$t;
+
+                    document.querySelector(".image").alt = song.gsx$albumcover.$t;
+                    document.querySelector(".lyrics").innerHTML = `<pre>${song.gsx$lyrics.$t}</pre>`;
                 }
             });
         }
