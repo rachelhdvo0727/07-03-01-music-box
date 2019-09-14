@@ -17,8 +17,10 @@
             --othertext-font: 'Raleway', sans-serif;
         }
 
+        html,
         body {
             margin: 0 auto;
+            height: 100%;
         }
 
         img {
@@ -28,14 +30,6 @@
         nav {
             text-align: center;
             margin: 2vw;
-        }
-
-        header {
-            background-image: url(assets/single_og_playlist_splash1.jpg);
-            background-size: cover;
-            width: 100vw;
-            height: 60vw;
-            background-position: 45% 40%;
         }
 
         h1 {
@@ -48,28 +42,37 @@
 
         h2 {
             font-family: var(--h1-h2-font);
-            font-size: 150%;
+            font-size: 120%;
         }
 
         p {
             font-family: var(--othertext-font);
         }
 
+        header {
+            background-image: url(assets/single_og_playlist_splash1.jpg);
+            background-size: cover;
+            width: 100%;
+            height: 60vw;
+            background-position: 45% 40%;
+        }
+
+
         #logo {
             width: 30%;
-            margin: 2.5vw 0 0 2.5vw;
+            margin: 3vw 1vw 0 3vw;
         }
 
         #listeindhold {
-            display: inline-grid;
-            grid-gap: 10vw;
+            display: grid;
+            grid-gap: 2vw;
             margin: 0 6vw 8vw 6vw;
         }
 
         article {
             background-color: #80C4CB;
             margin: 3vw;
-            box-shadow: 1vw 2vw 2vw #A7A7A7;
+            box-shadow: 0.5vw 1vw 2vw #A7A7A7;
         }
 
         .indhold_boks {
@@ -129,23 +132,30 @@
             #listeindhold {
                 grid-template-columns: 1fr;
             }
+
         }
 
         @media screen and (min-width:780px) {
+            #listeindhold {
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 0;
+                margin: 2vw;
+            }
+
+            #spille-knap {
+                width: 3vw;
+                height: 2.5vw;
+                top: 1vw;
+                left: 13vw;
+            }
+
             header {
-                width: 100vw;
                 height: 35vw;
                 background-position: 45% 90%;
             }
 
             #logo {
                 width: 20%;
-            }
-
-            #listeindhold {
-                grid-template-columns: repeat(4, 1fr);
-                grid-gap: 3vw;
-                margin: 3.5vw;
             }
 
             nav {
@@ -166,38 +176,27 @@
             }
 
             h2 {
-                font-size: 150%;
+                font-size: 120%;
             }
 
             p {
                 font-size: 100%;
             }
 
-            #spille-knap {
-                width: 3vw;
-                height: 2.5vw;
-                position: relative;
-                top: 1vw;
-                left: 15vw;
+            .indhold_boks {
+                padding: 0 1.3vw 2vw;
             }
 
             #menu {
                 display: list-item;
-                margin: 4vw 0 0 0;
             }
 
             #filterknap {
                 display: none;
             }
 
-
-
             footer {
                 height: 5vw;
-            }
-
-            article {
-                box-shadow: 0.5vw 1vw 2vw #A7A7A7;
             }
         }
     </style>
@@ -205,15 +204,15 @@
 
 <body>
     <header>
-        <section id="splash"></section>
         <img id="logo" src="assets/logo.svg" alt="logo_music_box">
         <h1></h1>
     </header>
+    <section id="splash"></section>
     <section id="filtermenu">
         <nav>
             <button id="filterknap">Filter</button>
             <div id="menu" class="hidden">
-                <button class="filter vagt" data-genre="alle">Alle</button>
+                <button class="filter vagt" data-genre="alle">Alle Sanger</button>
                 <button class="filter" data-genre="pop">Pop</button>
                 <button class="filter" data-genre="soul">Soul</button>
                 <button class="filter" data-genre="pop">EDM</button>
@@ -231,7 +230,7 @@
 
     <template>
         <article>
-            <img src="" alt="">
+            <img class="album_size" src="" alt="">
             <div class="indhold_boks">
                 <h2></h2>
                 <p class="kunstner"></p>
@@ -279,7 +278,7 @@
                 if (filtergenre == "alle" || filtergenre == sang.gsx$genre.$t) {
                     let klon = sangTemplate.cloneNode(true).content;
 
-                    klon.querySelector("img").src = "albums-billeder/" + sang.gsx$albumcover.$t + "-album.png";
+                    klon.querySelector("img").src = "albums-billeder/" + sang.gsx$albumcover.$t + "-album.jpg";
                     klon.querySelector("h2").textContent = sang.gsx$navn.$t;
                     klon.querySelector(".kunstner").textContent = sang.gsx$kunstner.$t;
                     klon.querySelector(".album").textContent = sang.gsx$album.$t;
