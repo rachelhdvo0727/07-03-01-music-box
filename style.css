@@ -1,0 +1,541 @@
+:root {
+    --main-color: #6ECBD2;
+    --footer-color: #F9F4CA;
+    --btn-color: #DFA0C4;
+    --headline-color: #940755;
+    --bg-color: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+/************************HEADER**********************/
+#forside header {
+    background: url(assets/forside-splash.jpg);
+    background-size: cover;
+    height: 35vh;
+    background-position: center;
+}
+
+#logo {
+    /* width: 28vw;
+    height: 15vw;*/
+    width: 170px;
+    height: 88.39px;
+    margin: 1rem;
+
+}
+
+/***********************FOOTER****************************/
+footer {
+    background-color: var(--footer-color);
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/************************GRID**********************/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin-bottom: 1rem;
+
+
+}
+
+.grid-venstre {
+    padding: 5rem;
+    font-family: Raleway, sans-serif;
+    font-size: 1rem;
+
+}
+
+
+.grid-hoejre {
+    min-height: 45vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    grid-auto-rows: 1fr;
+    margin: 0 auto;
+}
+
+
+.box {
+    background-size: cover;
+}
+
+.hele-listen {
+    background-image: url(assets/rune1.jpg);
+
+}
+
+.subangi {
+    background-image: url(assets/rune2.jpg);
+}
+
+.rachel {
+    background-image: url(assets/rune3.jpg);
+}
+
+.rune {
+    background-image: url(assets/rune4.jpg);
+}
+
+.textimg {
+
+    padding-top: 10rem;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 2vh;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+
+
+}
+
+.box h1 {
+    padding: 1rem;
+    width: 100%;
+
+
+}
+
+.box img {
+    width: 1vw;
+
+}
+
+.subangi h1,
+.rune h1 {
+    background-color: rgba(255, 255, 255, 0.62);
+    color: black;
+}
+
+.hele-listen h1,
+.rachel h1 {
+    background-color: rgba(9, 158, 173, 0.81);
+}
+
+.footer {
+    background-color: yellow;
+}
+
+
+@media screen and (min-width:680px) {
+
+
+
+
+    .grid-hoejre {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4px;
+
+
+    }
+
+
+    .content {
+        background-color: blue;
+
+
+    }
+
+
+}
+
+@media screen and (min-width:900px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        grid-auto-rows: 1fr;
+
+    }
+
+
+
+
+    .grid-hoejre {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+
+    }
+
+
+    .content {
+        background-color: blue;
+
+
+    }
+
+}
+
+/********************PLAYLIST.HTML*****************************/
+:root {
+    --main-contentbox-color: #099EAD;
+    --footer-color: #E6D844;
+    --btn-color: #DFA0C4;
+    --headline-color: #940755;
+    --bg-color: #ffffff;
+    --h1-h2-font: 'Poppins', sans-serif;
+    --othertext-font: 'Raleway', sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+/*-----FONTE-----*/
+/*h1 {
+    font-family: var(--h1-h2-font);
+    font-size: 2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 0 20vw 0 2vw;
+}*/
+
+h2 {
+    font-family: var(--h1-h2-font);
+    font-size: 120%;
+}
+
+/*denne font er mellemrubik til kunstners og albums navne*/
+h3 {
+    font-family: var(--othertext-font);
+    font-weight: 400;
+    font-size: 110%;
+}
+
+/*denne font er til sangs varihed*/
+p {
+    font-family: var(--othertext-font);
+    font-size: 95%;
+}
+
+/*-----BODYS ELEMENTER-----*/
+html,
+body {
+    margin: 0 auto;
+    height: 100%;
+}
+
+nav {
+    text-align: center;
+    margin: 2vw;
+}
+
+header {
+    background-image: url(assets/single_og_playlist_splash1.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 60vw;
+    background-position: 45% 40%;
+}
+
+
+#logo {
+    width: 30%;
+    margin: 3vw 1vw 0 3vw;
+}
+
+#listeindhold {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    margin: 0 6vw 6vw 6vw;
+}
+
+.playlist {
+    background-color: #80C4CB;
+    margin: 1vw;
+    box-shadow: 0.5vw 1vw 2vw #A7A7A7;
+    position: relative;
+}
+
+.indhold_boks {
+    padding: 0 3.5vw 2vw;
+}
+
+.valgt {
+    background-color: var(--headline-color);
+    font-family: var(--othertext-font);
+    color: white;
+}
+
+button {
+    background-color: var(--btn-color);
+    border: none;
+    height: 6vw;
+    width: 28vw;
+    border-radius: 3vw;
+    font-family: var(--othertext-font);
+    font-size: 80%;
+    font-weight: 700;
+    color: var(--bg-color);
+    margin: 1vw;
+}
+
+/*#spille-knap {
+
+    position: relative;
+    top: -2vw;
+    left: 66vw;
+}*/
+
+
+#spille-knap {
+    width: 7%;
+    height: 9.5%;
+    bottom: 1%;
+    right: 1%;
+    position: absolute;
+}
+
+#filterknap {
+    position: relative;
+    left: 30vw;
+}
+
+#menu {
+    background-color: transparent;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: var(--footer-color);
+    height: 10vw;
+    width: auto;
+    padding-top: 1vw;
+    text-align: center;
+}
+
+@media screen and (min-width:600px) {
+    /*  #listeindhold {
+        grid-template-columns: 1fr;
+    }*/
+
+}
+
+@media screen and (min-width:780px) {
+    /*   #listeindhold {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0;
+        margin: 2vw;
+    }*/
+
+    #spille-knap {
+        width: 15%;
+        height: 13%;
+
+    }
+
+    header {
+        height: 35vw;
+        background-position: 45% 90%;
+    }
+
+    #logo {
+        width: 20%;
+    }
+
+    nav {
+        margin: 1vw;
+    }
+
+    button {
+        height: 2.8vw;
+        width: 16vw;
+        font-size: 100%;
+        font-weight: 700;
+        margin: 1vw;
+    }
+
+    /*  h1 {
+        font-size: 550%;
+        margin: 5vw 0 20vw 20vw;
+    }*/
+
+    h2 {
+        font-size: 120%;
+    }
+
+    p {
+        font-size: 100%;
+    }
+
+    .indhold_boks {
+        padding: 0 1.3vw 2vw;
+    }
+
+    #menu {
+        display: list-item;
+    }
+
+    #filterknap {
+        display: none;
+    }
+
+    footer {
+        height: 5vw;
+    }
+}
+
+/*********************************SINGLE.HTML********************************
+        /***********************HEADER***************/
+
+header {
+    background: url(assets/single_og_playlist_splash1.jpg);
+    background-size: cover;
+    height: 35vh;
+    position: relative;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#logo {
+    /* width: 28vw;
+    height: 15vw;*/
+    width: 170px;
+    height: 88.39px;
+    margin: 1vw;
+}
+
+#singlepage {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.back {
+    width: 2vw;
+    margin: 2vw;
+    transform: rotate(180deg);
+}
+
+.indhold {}
+
+.full {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+
+.titel {
+    color: var(--bg-color);
+    font-size: 3rem;
+    font-family: poppins, sans-serif;
+    margin-left: 1rem;
+
+}
+
+p {
+    font-family: raleway, sans-serif;
+}
+
+.image {
+    border-radius: 10%;
+    max-width: 300px;
+    width: 60vw;
+    z-index: 1;
+
+}
+
+.single {
+    background-color: var(--main-color);
+    position: relative;
+    width: 90vw;
+    padding: 12rem 1rem 1rem;
+    margin-top: -10rem;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+
+
+
+}
+
+.single h2 {
+    color: var(--headline-color);
+    font-family: poppins, sans-serif;
+}
+
+.single h3 {
+    color: var(--headline-color);
+    font-family: poppins, sans-serif;
+    font-size: 1rem;
+
+}
+
+.single p {
+    font-size: 0.8rem;
+    padding: 1rem;
+
+}
+
+footer {
+    background-color: var(--footer-color);
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+pre {
+    font-family: raleway, sans-serif;
+    text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+    .single p {
+        font-size: 1rem;
+        padding: 1rem;
+
+    }
+
+    .titel {
+        text-align: center;
+        padding: 0;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+
+
+    header {
+        height: 45vh;
+    }
+
+
+}
