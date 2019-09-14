@@ -17,21 +17,11 @@
             --othertext-font: 'Raleway', sans-serif;
         }
 
-        html,
-        body {
-            margin: 0 auto;
-            height: 100%;
-        }
-
         img {
             width: 100%;
         }
 
-        nav {
-            text-align: center;
-            margin: 2vw;
-        }
-
+        /*-----FONTE-----*/
         h1 {
             font-family: var(--h1-h2-font);
             font-size: 270%;
@@ -45,8 +35,27 @@
             font-size: 120%;
         }
 
+        h3 {
+            font-family: var(--othertext-font);
+            font-weight: 400;
+            font-size: 110%;
+        }
+
         p {
             font-family: var(--othertext-font);
+            font-size: 95%;
+        }
+
+        /*-----BODYS ELEMENTER-----*/
+        html,
+        body {
+            margin: 0 auto;
+            height: 100%;
+        }
+
+        nav {
+            text-align: center;
+            margin: 2vw;
         }
 
         header {
@@ -233,8 +242,8 @@
             <img class="album_size" src="" alt="">
             <div class="indhold_boks">
                 <h2></h2>
-                <p class="kunstner"></p>
-                <p class="album"></p>
+                <h3 class="kunstner"></h3>
+                <h3 class="album"></h3>
                 <p class="tid"></p>
                 <img id="spille-knap" src="" alt="play button">
             </div>
