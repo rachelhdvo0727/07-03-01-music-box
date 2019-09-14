@@ -1,14 +1,17 @@
 let sanger;
+let filter = "alle";
 let filtergenre = "alle";
 const sangListe = document.querySelector("#listeindhold");
 const sangTemplate = document.querySelector("template");
 let urlParams = new URLSearchParams(window.location.search);
 let getBruger = urlParams.get("bruger");
 let bruger = `spotify:user:${getBruger}`;
-document.addEventListener("DOMContentLoaded", start);
-let filter = "alle";
-
 let uri = urlParams.get("uri");
+
+document.addEventListener("DOMContentLoaded", start);
+
+
+
 
 function start() {
     document.querySelectorAll(".box").forEach(pBtn => {
@@ -17,7 +20,6 @@ function start() {
 
     hentJson();
 }
-
 
 
 function whichPlayList() {
@@ -30,7 +32,6 @@ function playListSelect() {
     /*   lister = this.dataset.bruger;*/
     location.href = `playlist.html?bruger=${lister}`;
 
-
 }
 
 
@@ -40,6 +41,7 @@ async function hentJson() {
     visSangListen();
     klikFilter();
     clickonFilterknap();
+    tilbageKlik();
 }
 
 function clickonFilterknap() {
@@ -50,6 +52,15 @@ function clickonFilterknap() {
 
 function toggleFilterlist() {
     document.querySelector("#menu").classList.toggle("hidden");
+}
+
+function tilbageKlik() {
+    console.log("tilbageKlik")
+    document.querySelector(".tilbage").addEventListener("click", tilbageForside);
+}
+
+function tilbageForside() {
+    window.history.back();
 }
 
 function visSangListen() {
@@ -68,9 +79,6 @@ function visSangListen() {
                 sangListe.lastElementChild.addEventListener("click", () => {
 
                     location.href = `single.html?uri=${sang.gsx$uri.$t}`;
-
-
-
                 });
             }
 
@@ -107,12 +115,13 @@ function visLyrics() {
         })
         sanger.feed.entry.forEach(song => {
             if (song.gsx$uri.$t == uri) {
-                document.querySelector(".full h2").textContent = song.gsx$navn.$t;
-                document.querySelector(".full h3").textContent = song.gsx$album.$t;
                 document.querySelector(".titel").textContent = song.gsx$navn.$t;
+                document.querySelector(".full h2").textContent = song.gsx$kunstner.$t;
+                //                document.querySelector(".artist").textContent = song.gsx$kunstner.$t;
+                document.querySelector(".full h3").textContent = "Album: " + song.gsx$album.$t;
+
 
                 document.querySelector(".image").src = "albums-billeder/" + song.gsx$albumcover.$t + "-album.jpg";
-
                 document.querySelector(".image").alt = song.gsx$albumcover.$t;
                 document.querySelector(".lyrics").innerHTML = `<pre>${song.gsx$lyrics.$t}</pre>`;
             }
