@@ -9,8 +9,11 @@
 body {
     margin: 0;
     padding: 0;
+}
 
-
+* {
+    margin: 0;
+    box-sizing: border-box;
 }
 
 img {
@@ -18,19 +21,32 @@ img {
 }
 
 /************************HEADER**********************/
-header {
-    background-image: url(assets/single_og_playlist_splash1.jpg);
+#forside header {
+    background: url(assets/forside-splash.jpg);
     background-size: cover;
-    width: 100vw;
-    height: 30vw;
-    background-position: 45% 40%;
+    height: 35vh;
+    background-position: center;
 }
 
 #logo {
-    object-fit: contain;
-    float: left;
-    width: 10%;
+    /* width: 28vw;
+    height: 15vw;*/
+    width: 170px;
+    height: 88.39px;
+    margin: 1rem;
+
 }
+
+/***********************FOOTER****************************/
+footer {
+    background-color: var(--footer-color);
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /************************GRID**********************/
 
@@ -42,72 +58,92 @@ header {
 
 }
 
-.gridVenstre {
-    padding: 5vh 5vw 5vw 5wh;
-    text-align: center;
+.grid-venstre {
+    padding: 5rem;
+    font-family: Raleway, sans-serif;
+    font-size: 1rem;
+
 }
 
 
-.gridHoejre {
-    min-height: 50vw;
+.grid-hoejre {
+    min-height: 45vw;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
     grid-auto-rows: 1fr;
-    margin: 10px
+    margin: 0 auto;
 }
 
 
-.content {}
+.box {
+    background-size: cover;
+}
 
 .hele-listen {
     background-image: url(assets/rune1.jpg);
-    background-size: cover;
-
-
 }
 
 .subangi {
     background-image: url(assets/rune2.jpg);
-    background-size: cover;
-
-
-
 }
 
 .rachel {
     background-image: url(assets/rune3.jpg);
-    background-size: cover;
-
-
 }
 
 .rune {
     background-image: url(assets/rune4.jpg);
-    background-size: cover;
 }
 
 .textimg {
-    text-align: center;
+
     padding-top: 10rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 2vh;
-    margin: auto;
-    font-size: 1rem
+    margin-bottom: 1rem;
+    font-size: 1rem;
+
+
+}
+
+.box h1 {
+    padding: 1rem;
+    width: 100%;
+
+
+}
+
+.box img {
+    width: 3vw;
+
+
+
+}
+
+.subangi h1,
+.rune h1 {
+    background-color: rgba(255, 255, 255, 0.62);
+    color: black;
+}
+
+.hele-listen h1,
+.rachel h1 {
+    background-color: rgba(9, 158, 173, 0.81);
 }
 
 .footer {
     background-color: yellow;
 }
 
+
 @media screen and (min-width:680px) {
 
 
-    .gridVenstre {}
 
 
-    .gridHoejre {
+    .grid-hoejre {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 4px;
@@ -134,10 +170,10 @@ header {
 
     }
 
-    .gridVenstre {}
 
 
-    .gridHoejre {
+
+    .grid-hoejre {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
