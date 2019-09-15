@@ -145,7 +145,7 @@ footer {
     font-family: var(--h1-h2-font);
     font-size: 160%;
     color: black;
-
+    text-align: left;
 }
 
 .hele-listen .colorbox,
@@ -157,7 +157,7 @@ footer {
 .rachel h1 {
     font-family: var(--h1-h2-font);
     font-size: 160%;
-
+    text-align: left;
 }
 
 .colorbox:hover {
@@ -525,10 +525,6 @@ pre {
 
     #filterknap {
         display: none;
-    }
-
-    .tilbage img {
-        width: 20%;
     }
 
     footer {
