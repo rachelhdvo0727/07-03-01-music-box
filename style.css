@@ -192,6 +192,11 @@ p {
     font-size: 95%;
 }
 
+.laesemere {
+    font-weight: 700;
+    color: var(--headline-color);
+}
+
 /*-----BODYS ELEMENTER-----*/
 html,
 body {
@@ -551,6 +556,10 @@ pre {
         grid-template-columns: 1fr 1fr;
         grid-gap: 5px;
         grid-auto-rows: 1fr;
+    }
+
+    .grid-venstre {
+        padding-left: 1rem;
     }
 
     .grid-hoejre {
