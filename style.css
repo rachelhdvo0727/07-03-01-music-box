@@ -1,6 +1,6 @@
 :root {
     --main-color: #6ECBD2;
-    --footer-color: #E6D844;
+    --footer-color: #F9F4CA;
     --btn-color: #DFA0C4;
     --headline-color: #940755;
     --bg-color: #ffffff;
@@ -66,6 +66,7 @@ footer {
     grid-template-columns: 1fr;
     grid-gap: 10px;
     margin-bottom: 1rem;
+    max-width: 1200px;
 
 }
 
