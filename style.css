@@ -169,8 +169,8 @@ footer {
 h1 {
     font-family: var(--h1-h2-font);
     color: white;
-    font-size: 280%;
-    padding: 0 0 5vw 16vw;
+    font-size: 250%;
+    padding: 11vw 0 3vw 10vw;
 }
 
 h2 {
@@ -194,7 +194,9 @@ p {
 
 .laesemere {
     font-weight: 700;
+    font-size: 95%;
     color: var(--headline-color);
+    padding: 2vw 0;
 }
 
 /*-----BODYS ELEMENTER-----*/
@@ -496,10 +498,10 @@ pre {
         margin: 1vw;
     }
 
-    /*  h1 {
-        font-size: 550%;
-        margin: 5vw 0 20vw 20vw;
-    }*/
+    h1 {
+        font-size: 300%;
+        padding: 5vw 0 3vw 10vw;
+    }
 
     h2 {
         font-size: 120%;
