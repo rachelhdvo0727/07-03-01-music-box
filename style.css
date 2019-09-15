@@ -170,7 +170,8 @@ h1 {
     font-family: var(--h1-h2-font);
     color: white;
     font-size: 250%;
-    padding: 11vw 0 3vw 10vw;
+    padding: 11vw 0 3vw 0vw;
+    text-align: center;
 }
 
 h2 {
@@ -459,6 +460,7 @@ pre {
 
     .titel {
         text-align: center;
+        padding: 11vw 0 3vw 0vw;
         padding: 0;
     }
 
