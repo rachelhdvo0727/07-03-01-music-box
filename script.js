@@ -71,7 +71,7 @@ function visSangListen() {
                 let klon = sangTemplate.cloneNode(true).content;
                 klon.querySelector("img").src = "albums-billeder/" + sang.gsx$albumcover.$t + "-album.jpg";
                 klon.querySelector("h2").textContent = sang.gsx$navn.$t;
-                klon.querySelector(".kunstner").textContent = sang.gsx$kunstner.$t;
+                klon.querySelector(".kunstner").textContent = `af ${sang.gsx$kunstner.$t}`;
                 klon.querySelector(".album").textContent = sang.gsx$album.$t;
                 klon.querySelector(".tid").textContent = sang.gsx$varihed.$t;
                 klon.querySelector("#spille-knap").src = "assets/spille-knap.svg";

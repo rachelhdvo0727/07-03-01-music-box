@@ -228,8 +228,14 @@ header {
 #listeindhold {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     margin: 0 6vw 6vw 6vw;
+
+}
+
+.indhold_boks {
+    padding: 1rem 2rem 2vw;
+    /* line-height: 3.5vw;*/
 }
 
 .playlist {
@@ -258,11 +264,12 @@ header {
 }
 */
 
-.indhold_boks {
-    padding: 2vw 3.5vw 3vw;
-    line-height: 6vw;
-
+#playlist-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
+
 
 .valgt {
     background-color: var(--headline-color);
@@ -515,7 +522,7 @@ pre {
 
     .indhold_boks {
         padding: 0 1.3vw 2vw;
-        line-height: 3.5vw;
+        /* line-height: 3.5vw;*/
     }
 
     #menu {
@@ -573,8 +580,8 @@ pre {
     }
 
     .indhold_boks {
-        padding: 0 1.3vw 2vw;
-        line-height: 2.5vw;
+        padding: 1rem 1.3vw 0.5rem;
+        line-height: 1.5rem;
     }
 
     .tilbage img {
@@ -585,5 +592,14 @@ pre {
         width: 1.5vw;
         margin: 2vw;
 
+    }
+}
+
+
+
+@media screen and (min-width:1200px) {
+    #listeindhold {
+
+        margin: 0;
     }
 }
