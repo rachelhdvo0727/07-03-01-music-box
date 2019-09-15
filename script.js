@@ -56,7 +56,7 @@ function toggleFilterlist() {
 
 function tilbageKlik() {
     console.log("tilbageKlik")
-    document.querySelector(".tilbage").addEventListener("click", tilbageForside);
+    document.querySelector(".back").addEventListener("click", tilbageForside);
 }
 
 function tilbageForside() {
