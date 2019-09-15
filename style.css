@@ -43,8 +43,13 @@ img {
 /***********************FOOTER****************************/
 footer {
     background-color: var(--footer-color);
-    height: 10vh;
+    height: 7vh;
     text-align: center;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     /*
     display: flex;
     justify-content: center;
@@ -326,12 +331,6 @@ button:hover {
     display: none;
 }
 
-footer {
-    background-color: var(--footer-color);
-    height: 10vw;
-    text-align: center;
-    margin-top: 1rem;
-}
 
 
 /*********************************SINGLE.HTML********************************
@@ -426,14 +425,7 @@ p {
 
 }
 
-footer {
-    background-color: var(--footer-color);
-    height: 10vh;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 pre {
     font-family: raleway, sans-serif;
@@ -534,9 +526,7 @@ pre {
         display: none;
     }
 
-    footer {
-        height: 5vw;
-    }
+
 
     .back {
         width: 2.5vw;
