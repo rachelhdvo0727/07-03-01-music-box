@@ -78,7 +78,7 @@ footer {
 
 
 .grid-hoejre {
-    min-height: 45vw;
+    min-height: 45vw 45vw;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
