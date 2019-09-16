@@ -73,30 +73,26 @@ img {
     display: inline-block;
     color: black;
     z-index: 100;
-    font-size: 3rem;
+    font-size: 2.5rem;
     position: absolute;
     right: 0;
     top: 0;
-    position: fixed;
+        position: fixed;
     padding: 0.5rem;
     font-family: 'Raleway', sans-serif;
-
 }
 
 
 
 header nav a {
     color: #000000;
-    font-family: 'raleway', sans-serif;
-    font-weight: bolder;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
     text-decoration: none;
     font-size: 1.2rem;
     margin: 0.3rem 0;
     padding: 0.3rem 0;
     line-height: 3rem;
-
-
-
 
 }
 

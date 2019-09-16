@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", start);
 
 
 
-
 function start() {
     document.querySelectorAll(".box").forEach(pBtn => {
         pBtn.addEventListener("click", whichPlayList);
@@ -24,7 +23,6 @@ function start() {
 
 function whichPlayList() {
     lister = this.dataset.bruger;
-
     playListSelect();
 }
 
@@ -32,7 +30,6 @@ function whichPlayList() {
 function playListSelect() {
     /*   lister = this.dataset.bruger;*/
     location.href = `playlist.html?bruger=${lister}`;
-    document.querySelector("h1").textContent = this.textContent;
 
 }
 
