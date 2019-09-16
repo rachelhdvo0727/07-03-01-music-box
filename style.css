@@ -177,7 +177,15 @@ h1 {
     font-family: var(--h1-h2-font);
     color: white;
     font-size: 250%;
-    padding: 5vw 0 3vw 0vw;
+    padding: 5vw 0 1.5vw 0vw;
+    text-align: center;
+}
+
+.filtretnavn {
+    font-family: var(--h1-h2-font);
+    color: white;
+    font-size: 200%;
+    padding: 5vw 0 1.5vw 0vw;
     text-align: center;
 }
 
@@ -425,8 +433,6 @@ p {
 
 }
 
-
-
 pre {
     font-family: raleway, sans-serif;
     text-align: center;
@@ -444,6 +450,7 @@ pre {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 2vw;
+        padding: 3rem;
     }
 
     /************SINGLE VIEW*********/
@@ -556,11 +563,12 @@ pre {
     }
 
     .grid-venstre {
-        padding-left: 1rem;
+        padding: 2rem 2rem 0 3rem;
     }
 
     .grid-hoejre {
         display: grid;
+        padding: 1rem;
         grid-template-columns: 1fr 1fr;
         grid-gap: 1.5vw;
     }

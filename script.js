@@ -24,6 +24,7 @@ function start() {
 
 function whichPlayList() {
     lister = this.dataset.bruger;
+
     playListSelect();
 }
 
@@ -31,6 +32,7 @@ function whichPlayList() {
 function playListSelect() {
     /*   lister = this.dataset.bruger;*/
     location.href = `playlist.html?bruger=${lister}`;
+    document.querySelector("h1").textContent = this.textContent;
 
 }
 
@@ -96,13 +98,14 @@ function klikFilter() {
 
 function filtreringGenre() {
     filtergenre = this.dataset.genre;
-    document.querySelector("h1").textContent = this.textContent;
+    document.querySelector(".filtretnavn").textContent = this.textContent;
 
     document.querySelectorAll(".filter").forEach(elm => {
         elm.classList.remove("valgt");
     });
 
     this.classList.add("valgt");
+
     sangListe.innerHTML = "";
     visSangListen();
 }
