@@ -12,6 +12,22 @@
 <body id="forside">
     <header>
         <img id="logo" src="assets/logo.svg">
+        <nav>
+            <div id="menuknap">☰</div>
+            <div id="burgermenu" class="hide">
+                <a href="index.html">Forside</a>
+                <a href="playlist.html?bruger=alle">Alle sange</a>
+                <nav class="dropdown">
+                    <button id="dropdownbtn">Playlister <i class="fas fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="playlist.html?bruger=1149134224">Subangis playliste</a>
+                        <a href="playlist.html?bruger=12149118764">Rachels playliste</a>
+                        <a href="playlist.html?bruger=113661608">Runes playliste</a>
+                    </div>
+                </nav>
+                <a href="kontakt.html">Support</a>
+            </div>
+        </nav>
     </header>
     <div class="grid-container">
         <div class="grid-venstre">
@@ -56,7 +72,6 @@
         <p>&copy; 2019 MUSIC BOX</p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <script src="burgermenu.js"></script>
 
-</html>
+</body></html>
