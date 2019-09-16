@@ -480,7 +480,7 @@ p {
 .single {
     background-color: var(--main-color);
     position: relative;
-    width: 90vw;
+    width: 94vw;
     padding: 12rem 1rem 1rem;
     margin-top: -10rem;
     margin-bottom: 10vh;
@@ -504,8 +504,8 @@ p {
 }
 
 .single p {
-    font-size: 0.8rem;
-    padding: 1rem;
+    font-size: 90%;
+    padding: 0.5rem;
 
 }
 
@@ -536,7 +536,7 @@ pre {
 
     .single p {
         font-size: 1rem;
-        padding: 1rem;
+        padding: 0.5rem;
 
     }
 
