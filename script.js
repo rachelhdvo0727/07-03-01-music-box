@@ -5,13 +5,11 @@ const sangListe = document.querySelector("#listeindhold");
 const sangTemplate = document.querySelector("template");
 let urlParams = new URLSearchParams(window.location.search);
 let getBruger = urlParams.get("bruger");
+let brugerNavn = urlParams.get("brugernavn");
 let bruger = `spotify:user:${getBruger}`;
 let uri = urlParams.get("uri");
 
 document.addEventListener("DOMContentLoaded", start);
-
-
-
 
 function start() {
     document.querySelectorAll(".box").forEach(pBtn => {
@@ -24,7 +22,6 @@ function start() {
 
 function whichPlayList() {
     lister = this.dataset.bruger;
-
     playListSelect();
 }
 
@@ -32,10 +29,8 @@ function whichPlayList() {
 function playListSelect() {
     /*   lister = this.dataset.bruger;*/
     location.href = `playlist.html?bruger=${lister}`;
-    document.querySelector("h1").textContent = this.textContent;
 
 }
-
 
 async function hentJson() {
     const minJson = await fetch("https://spreadsheets.google.com/feeds/list/1Y6c_YOI5XmIz6zh6OT_943mOkupPzIyyYaDALWxi6LQ/od6/public/values?alt=json&fbclid=IwAR3GvdQvKcjYnqT18MlJN99RDpNzlUmAW68sfh6Vl2ChXgjJi_lKYb9sou8");
@@ -69,6 +64,8 @@ function visSangListen() {
 
     sanger.feed.entry.forEach(sang => {
         if (sang.gsx$bruger.$t == bruger || "alle" == getBruger) {
+            document.querySelector(".brugerplaylist").innerHTML = sang.gsx$brugernavn.$t + " Playlist";
+
             if (filtergenre == "alle" || filtergenre == sang.gsx$genre.$t) {
                 let klon = sangTemplate.cloneNode(true).content;
                 klon.querySelector("img").src = "albums-billeder/" + sang.gsx$albumcover.$t + "-album.jpg";
