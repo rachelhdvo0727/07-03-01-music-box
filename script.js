@@ -11,8 +11,6 @@ let uri = urlParams.get("uri");
 
 document.addEventListener("DOMContentLoaded", start);
 
-
-
 function start() {
     document.querySelectorAll(".box").forEach(pBtn => {
         pBtn.addEventListener("click", whichPlayList);
