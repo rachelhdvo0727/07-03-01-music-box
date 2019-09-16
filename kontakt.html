@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kontakt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+</style>
+
+<body id="forside">
+    <header>
+        <img id="logo" src="assets/logo.svg">
+    </header>
+
+    <div class="flexcontainer">
+        <div class="kontkakttxt">
+            <p>Oplever du problemer med siden eller har du genralt spørgsmål til musicbox eller endnu bedre har du forslag til nye tiltag så kan du kontankte os og vi vil vender tilbage inde for 24 timer </p>
+        </div>
+
+
+        <div class="formular">
+            <form action="action_page.php">
+
+                <label for="fname">Navn</label>
+                <input type="text" id="fname" name="firstname" placeholder="Hvad må vi kalde dig ?">
+
+
+
+                <label for="subject">Din bedsked</label>
+                <textarea id="subject" name="subject" placeholder="Hvad brænder du inde med af fornuftige ting ?" style="height:200px"></textarea>
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2019 MUSIC BOX</p>
+    </footer>
+</body></html>
+
+.flexcontainer {
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+input[type=submit] {
+    background-color: var(--headline-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
