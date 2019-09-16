@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,23 @@
 <body id="forside">
     <header>
         <img id="logo" src="assets/logo.svg">
+        <nav>
+            <div id="menuknap">☰</div>
+            <div id="burgermenu" class="hide">
+                <a href="index.html">Forside</a>
+                <a href="playlist.html?bruger=alle">Alle sange</a>
+                <nav class="dropdown">
+                    <button id="dropdownbtn">Playlister <i class="fas fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="playlist.html?bruger=1149134224">Subangis playliste</a>
+                        <a href="playlist.html?bruger=12149118764">Rachels playliste</a>
+                        <a href="playlist.html?bruger=113661608">Runes playliste</a>
+                    </div>
+                </nav>
+                <a href="kontakt.html">Support</a>
+            </div>
+        </nav>
     </header>
-
     <div class="flexcontainer">
         <div class="kontkakttxt">
             <p>Oplever du problemer med siden eller har du genralt spørgsmål til musicbox eller endnu bedre har du forslag til nye tiltag så kan du kontankte os og vi vil vender tilbage inde for 24 timer </p>
@@ -41,33 +57,6 @@
     <footer>
         <p>&copy; 2019 MUSIC BOX</p>
     </footer>
-</body></html>
+</body>
 
-.flexcontainer {
-    margin: 50px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-input[type=text],
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-}
-
-input[type=submit] {
-    background-color: var(--headline-color);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+</html>
