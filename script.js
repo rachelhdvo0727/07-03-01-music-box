@@ -84,8 +84,7 @@ function visSangListen() {
             }
 
         }
-    })
-    visLyrics();
+    }) visLyrics();
 
 }
 
