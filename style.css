@@ -37,6 +37,7 @@ img {
     width: 170px;
     height: 88.39px;
     margin-left: 2vw;
+    pointer-events: auto;
 
 }
 
@@ -274,8 +275,6 @@ header {
     margin: 0 auto;
 }
 
-
-
 .valgt {
     background-color: var(--headline-color);
     font-family: var(--h3-p-font);
@@ -285,8 +284,8 @@ header {
 button {
     background-color: var(--btn-color);
     border: none;
-    height: 6vw;
-    width: 28vw;
+    height: 8vw;
+    width: 25vw;
     border-radius: 3vw;
     font-family: var(--h3-p-font);
     font-size: 90%;
@@ -493,7 +492,7 @@ pre {
 
     button {
         height: 2.8vw;
-        width: 16vw;
+        width: 20vw;
         font-size: 100%;
         font-weight: 700;
         margin: 1vw;
