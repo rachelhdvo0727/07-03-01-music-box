@@ -1,6 +1,7 @@
 /*********GENERELT OG VARIABLER************/
 :root {
     --main-color: #6ECBD2;
+    --menu-background: #FFD744;
     --footer-color: #F9F4CA;
     --btn-color: #DFA0C4;
     --headline-color: #940755;
@@ -86,7 +87,7 @@ img {
 
 header nav a {
     color: #000000;
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--h3-p-font);
     font-weight: 700;
     text-decoration: none;
     font-size: 1.2rem;
@@ -98,15 +99,20 @@ header nav a {
 
 header nav a:hover {
     color: var(--headline-color);
-    font-family: 'Raleway', sans-serif;
-    text-decoration: none
+    font-family: var(--h3-p-font);
+    text-decoration: none;
 }
 
 #dropdownbtn {
+    font-family: var(--h3-p-font);
+    font-weight: bolder;
     display: none;
 }
 
 .dropdown-content {
+    color: var(--headline-color);
+    font-family: var(--h3-p-font);
+    font-weight: 700;
     display: flex;
     flex-direction: column;
 }
@@ -590,6 +596,7 @@ pre {
 
     #burgermenu {
         justify-content: flex-end;
+        background-color: var(--menu-background);
         position: fixed;
         width: 100vw;
         z-index: 40;
@@ -597,23 +604,18 @@ pre {
         display: flex;
         flex-direction: row;
         height: 6vh;
-
-
     }
 
     header {
         z-index: 100;
         margin-top: 6vh;
-
     }
 
 
     header nav a {
         margin: 0 0.25rem;
         padding: 0 0.25rem;
-        font-weight: normal;
-
-
+        font-weight: 700;
     }
 
     header nav {
@@ -628,6 +630,8 @@ pre {
 
 
     #dropdownbtn {
+        font-size: 1.2rem;
+        font-weight: 700;
         display: block;
         width: 100%;
     }
@@ -635,12 +639,11 @@ pre {
     .dropdown #dropdownbtn {
         color: #000000;
         background-color: inherit;
-        font-family: inherit;
+        /*        font-family: inherit;*/
         margin: 0;
-        font-family: Raleway, 'sans-serif';
-        font-weight: normal;
+        font-family: var(--h3-p-font);
+        font-weight: 700;
     }
-
 
     .dropdown-content {
         display: none;
@@ -648,11 +651,9 @@ pre {
         background-color: #f9f9f9;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
-
     }
 
     .dropdown-content a {
-
         color: black;
         display: block;
         text-align: left;
