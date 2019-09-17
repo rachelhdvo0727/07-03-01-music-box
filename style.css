@@ -262,7 +262,8 @@ h1 {
     font-family: var(--h1-h2-font);
     color: white;
     font-size: 200%;
-    padding: 5vw 0 1.5vw 0vw;
+    margin: 0;
+    padding: 1.5vw 0 1.5vw 0vw;
     text-align: center;
 }
 
@@ -368,7 +369,8 @@ header {
     color: white;
 }
 
-button {
+button,
+input[type=submit] {
     background-color: var(--btn-color);
     border: none;
     height: 8vw;
@@ -382,7 +384,8 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover,
+input[type=submit]:hover {
     background-color: var(--headline-color);
 
 }
@@ -615,6 +618,7 @@ pre {
         margin: 0 0.25rem;
         padding: 0 0.25rem;
         font-weight: 700;
+        font-size: 1.2rem;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -644,7 +648,7 @@ pre {
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #f9f9f9;
+        background-color: #f9f9f980;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
     }
@@ -663,7 +667,8 @@ pre {
         display: block;
     }
 
-    button {
+    button,
+    input[type=submit] {
         height: 2.8vw;
         width: 20vw;
         font-size: 100%;
@@ -783,18 +788,25 @@ textarea {
     box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 16px;
-    font-family: Poppins;
-    /* Jeg kunne ikke får varibalen til at virker derfor har jeg sat den ind sådan*/
+    font-family: var(--h3-p-font);
+    /* Jeg kunne ikke får varibalen til at virker derfor har jeg sat den ind sådan ----> Fikset*/
 
 }
 
-input[type=submit] {
+/* bliv lagt sammen med button tag*/
+/*input[type=submit] {
     background-color: var(--headline-color);
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+*/
+label {
+    font-family: var(--h3-p-font);
+    font-weight: 700;
+    font-size: 95%;
 }
 
 .kontkakttxt {
