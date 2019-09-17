@@ -21,7 +21,7 @@
                 <a href="index.html">Forside</a>
                 <a href="playlist.html?bruger=alle">Alle sange</a>
                 <nav class="dropdown">
-                    <button id="dropdownbtn">Playlister <i class="fas fa-caret-down"></i></button>
+                    <button id="dropdownbtn">Playlister <i class="fas fa-sort-down"></i></button>
                     <div class="dropdown-content">
                         <a href="playlist.html?bruger=1149134224">Subangis playliste</a>
                         <a href="playlist.html?bruger=12149118764">Rachels playliste</a>
@@ -39,17 +39,15 @@
 
 
         <div class="formular">
-            <form action="action_page.php">
+            <form method="post" action="/action_page.php">
 
                 <label for="fname">Navn</label>
-                <input type="text" id="fname" name="firstname" placeholder="Hvad må vi kalde dig ?">
-
-
+                <input type="text" id="fname" name="firstname" placeholder="Hvad må vi kalde dig ?" required>
 
                 <label for="subject">Din bedsked</label>
-                <textarea id="subject" name="subject" placeholder="Hvad brænder du inde med af fornuftige ting ?" style="height:200px"></textarea>
+                <textarea id="subject" name="subject" placeholder="Hvad brænder du inde med af fornuftige ting ?" style="height:200px" required></textarea>
 
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" href="index.html">
 
             </form>
         </div>
@@ -78,5 +76,8 @@
                 document.querySelector("#menuknap").textContent = "X";
             }
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
