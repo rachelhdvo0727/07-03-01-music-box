@@ -81,6 +81,7 @@ img {
     position: fixed;
     padding: 0.5rem;
     font-family: 'Raleway', sans-serif;
+    cursor: pointer;
 }
 
 
@@ -702,8 +703,6 @@ pre {
     #filterknap {
         display: none;
     }
-
-
 
     .back {
         width: 2.5vw;

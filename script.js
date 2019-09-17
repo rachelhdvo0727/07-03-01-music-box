@@ -5,7 +5,6 @@ const sangListe = document.querySelector("#listeindhold");
 const sangTemplate = document.querySelector("template");
 let urlParams = new URLSearchParams(window.location.search);
 let getBruger = urlParams.get("bruger");
-let getbrugerNavn = urlParams.get("brugernavn");
 let filterbruger = "alle";
 let uri = urlParams.get("uri");
 let bruger = `spotify:user:${getBruger}`;
