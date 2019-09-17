@@ -5,9 +5,10 @@ const sangListe = document.querySelector("#listeindhold");
 const sangTemplate = document.querySelector("template");
 let urlParams = new URLSearchParams(window.location.search);
 let getBruger = urlParams.get("bruger");
-let brugerNavn = urlParams.get("brugernavn");
-let bruger = `spotify:user:${getBruger}`;
+let getbrugerNavn = urlParams.get("brugernavn");
+let filterbruger = "alle";
 let uri = urlParams.get("uri");
+let bruger = `spotify:user:${getBruger}`;
 
 document.addEventListener("DOMContentLoaded", start);
 
@@ -63,8 +64,8 @@ function tilbageForside() {
 function visSangListen() {
 
     sanger.feed.entry.forEach(sang => {
-        if (sang.gsx$bruger.$t == bruger || "alle" == getBruger) {
-            document.querySelector(".brugerplaylist").innerHTML = sang.gsx$brugernavn.$t + " Playlist";
+        if ((sang.gsx$bruger.$t == bruger || "alle" == getBruger) && (filterbruger == "alle" || filterbruger == sang.gsx$brugernavn.$t)) {
+            document.querySelector(".brugerplaylist").textContent = `${sang.gsx$brugernavn.$t} Playlist`
 
             if (filtergenre == "alle" || filtergenre == sang.gsx$genre.$t) {
                 let klon = sangTemplate.cloneNode(true).content;
@@ -117,9 +118,7 @@ function visLyrics() {
             if (song.gsx$uri.$t == uri) {
                 document.querySelector(".titel").textContent = song.gsx$navn.$t;
                 document.querySelector(".full h2").textContent = song.gsx$kunstner.$t;
-                //                document.querySelector(".artist").textContent = song.gsx$kunstner.$t;
                 document.querySelector(".full h3").textContent = "Album: " + song.gsx$album.$t;
-
 
                 document.querySelector(".image").src = "albums-billeder/" + song.gsx$albumcover.$t + "-album.jpg";
                 document.querySelector(".image").alt = song.gsx$albumcover.$t;
