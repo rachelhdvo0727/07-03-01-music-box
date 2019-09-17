@@ -646,6 +646,16 @@ pre {
         font-weight: 700;
     }
 
+    .fa-sort-down:before {
+        content: "\f0d7";
+        /*følg en W3 tutorial, som bruger content
+        background-image: url(assets/sort-down-solid);
+        height: 2vw;
+        width: 2vw;
+*/
+
+    }
+
     .dropdown-content {
         display: none;
         position: absolute;
