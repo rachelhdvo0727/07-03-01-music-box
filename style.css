@@ -1,7 +1,7 @@
 /*********GENERELT OG VARIABLER************/
 :root {
     --main-color: #6ECBD2;
-    --menu-background: #FFD744;
+    --menu-bg-bold: #FFD744;
     --footer-color: #F9F4CA;
     --btn-color: #DFA0C4;
     --headline-color: #940755;
@@ -29,7 +29,7 @@ img {
     background: url(assets/forside-splash.jpg);
     background-position: 45% 30%;
     background-size: cover;
-    max-height: 45vh;
+    /*    max-height: 45vh;*/
 }
 
 #logo {
@@ -74,7 +74,7 @@ img {
     display: inline-block;
     color: black;
     z-index: 100;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     position: absolute;
     right: 0;
     top: 0;
@@ -94,7 +94,6 @@ header nav a {
     margin: 0.3rem 0;
     padding: 0.3rem 0;
     line-height: 3rem;
-
 }
 
 header nav a:hover {
@@ -596,7 +595,7 @@ pre {
 
     #burgermenu {
         justify-content: flex-end;
-        background-color: var(--menu-background);
+        background-color: var(--menu-bg-bold);
         position: fixed;
         width: 100vw;
         z-index: 40;
@@ -616,16 +615,13 @@ pre {
         margin: 0 0.25rem;
         padding: 0 0.25rem;
         font-weight: 700;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
     }
 
     header nav {
         overflow: hidden;
-    }
-
-    header nav a {
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
     }
 
 
