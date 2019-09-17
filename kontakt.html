@@ -13,6 +13,12 @@
 </style>
 
 <body id="forside">
+    <section id="popup">
+        <button class="luk">X</button>
+        <article class="tak">
+            <p>Din besked er nu sendt. Vi vender tilbage hurtigst muligt!</p>
+        </article>
+    </section>
     <header>
         <img id="logo" src="assets/logo.svg">
         <nav>
@@ -38,20 +44,17 @@
             <p>Oplever du problemer med siden eller har du genralt spørgsmål til musicbox eller endnu bedre har du forslag til nye tiltag så kan du kontankte os og vi vil vender tilbage inde for 24 timer. </p>
         </div>
 
+        <form>
 
-        <div class="formular">
-            <form method="post" action="/action_page.php">
+            <label for="fname">Navn</label>
+            <input type="text" id="fname" name="firstname" placeholder="Hvad må vi kalde dig ?" required>
 
-                <label for="fname">Navn</label>
-                <input type="text" id="fname" name="firstname" placeholder="Hvad må vi kalde dig ?" required>
+            <label for="subject">Din bedsked</label>
+            <textarea id="subject" name="subject" placeholder="Hvad brænder du inde med af fornuftige ting ?" style="height:200px" required></textarea>
 
-                <label for="subject">Din bedsked</label>
-                <textarea id="subject" name="subject" placeholder="Hvad brænder du inde med af fornuftige ting ?" style="height:200px" required></textarea>
+            <button type="button" class="submit">Indsend</button>
+        </form>
 
-                <input type="submit" value="Submit" href="index.html">
-
-            </form>
-        </div>
     </div>
     <footer>
         <p>&copy; 2019 MUSIC BOX</p>
@@ -60,22 +63,39 @@
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+
+            document.querySelector(".submit").addEventListener("click", visBesked);
+
+            document.querySelector('input').setCustomValidity('Your custom validation message comes here');
+
+
+            /* }*/
         }
 
-
-
-        function toggleMenu() {
-            console.log("toggleMenu");
-            document.querySelector("#burgermenu").classList.toggle("hide");
-
-            let erSkjult = document.querySelector("#burgermenu").classList.contains("hide");
-
-            if (erSkjult == true) {
-                document.querySelector("#menuknap").textContent = "☰";
-            } else {
-                document.querySelector("#menuknap").textContent = "X";
-            }
+        function visBesked() {
+            document.querySelector("#popup").style.display = "block";
+            document.querySelector(".luk").addEventListener("click", lukPopUp);
         }
+
+        function lukPopUp() {
+            document.querySelector("#popup").style.display = "none";
+            start();
+        }
+        /*
+                function toggleMenu() {
+                    console.log("toggleMenu");
+                    document.querySelector("#burgermenu").classList.toggle("hide");
+
+                    let erSkjult = document.querySelector("#burgermenu").classList.contains("hide");
+
+                    if (erSkjult == true) {
+                        document.querySelector("#menuknap").textContent = "☰";
+                    } else {
+                        document.querySelector("#menuknap").textContent = "X";
+                    }
+                }*/
+
     </script>
-</body></html>
+</body>
+
+</html>

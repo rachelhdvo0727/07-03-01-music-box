@@ -848,3 +848,31 @@ label {
 
     padding-bottom: 2rem
 }
+
+#popup {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    display: none;
+    overflow: scroll;
+}
+
+#popup img {
+    width: 20vw;
+}
+
+.indhold {
+    width: 70vw;
+    min-height: 50vh;
+    background: #fff;
+    margin: 4rem auto;
+    padding: 10px;
+}
+
+.luk {
+    position: fixed;
+    right: 0;
+    font-size: 2rem;
+}
