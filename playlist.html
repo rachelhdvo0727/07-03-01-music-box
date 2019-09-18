@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body id="playlist">
     <header>
         <a href="index.html"> <img id="logo" src="assets/logo.svg" alt="logo_music_box"></a>
         <nav>
@@ -19,15 +19,15 @@
             <div id="burgermenu" class="hide">
                 <!--Indholdet af burgermenu. Er som udgangspunkt lukket (.hide) og åbnes med js -->
                 <a href="index.html">Forside</a>
-                <a href="playlist.html?bruger=alle">Alle sange</a>
+                <a href="playlist.html?bruger=alle&brugernavn=alle">Alle sange</a>
                 <nav class="dropdown">
                     <button id="dropdownbtn">Playlister <i class="fas fa-caret-down"></i></button>
                     <!--Dropdown-knap-->
                     <div class="dropdown-content">
                         <!--Indholdet af dropdown-->
-                        <a href="playlist.html?bruger=1149134224">Subangis playliste</a>
-                        <a href="playlist.html?bruger=12149118764">Rachels playliste</a>
-                        <a href="playlist.html?bruger=113661608">Runes playliste</a>
+                        <a href="playlist.html?bruger=1149134224&brugernavn=subangi">Subangis playliste</a>
+                        <a href="playlist.html?bruger=12149118764&brugernavn=rachel">Rachels playliste</a>
+                        <a href="playlist.html?bruger=113661608&brugernavn=rune">Runes playliste</a>
                     </div>
                 </nav>
                 <a href="kontakt.html">Support</a>
@@ -81,6 +81,4 @@
     <script src="script.js"></script>
     <script src="burgermenu.js">
     </script>
-</body>
-
-</html>
+</body></html>

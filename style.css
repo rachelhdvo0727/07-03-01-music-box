@@ -49,7 +49,7 @@ img {
 
 /*--------------------HEADER-------------------*/
 header {
-    height: 60%;
+    height: 40%;
     width: 100%;
 }
 
@@ -620,10 +620,11 @@ label {
         height: 8%;
     }
 
-    header,
-    #forside header {
-        height: 35vw;
+    #playlist header,
+    #forside header,
+    #single header {
         background-position: 45% 80%;
+
     }
 
     nav {
@@ -661,6 +662,7 @@ label {
 
     header {
         z-index: 100;
+
 
     }
 

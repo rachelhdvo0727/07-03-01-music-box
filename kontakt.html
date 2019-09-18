@@ -20,7 +20,7 @@
         </article>
     </section>
     <header>
-        <img id="logo" src="assets/logo.svg">
+        <a href="index.html"> <img id="logo" src="assets/logo.svg" alt="logo_music_box"></a>
         <nav>
             <div id="menuknap">☰</div>
             <div id="burgermenu" class="hide">
@@ -59,6 +59,7 @@
     <footer>
         <p>&copy; 2019 MUSIC BOX</p>
     </footer>
+    <script src="burgermenu.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", start);
 
@@ -81,21 +82,5 @@
             document.querySelector("#popup").style.display = "none";
             start();
         }
-        /*
-                function toggleMenu() {
-                    console.log("toggleMenu");
-                    document.querySelector("#burgermenu").classList.toggle("hide");
-
-                    let erSkjult = document.querySelector("#burgermenu").classList.contains("hide");
-
-                    if (erSkjult == true) {
-                        document.querySelector("#menuknap").textContent = "☰";
-                    } else {
-                        document.querySelector("#menuknap").textContent = "X";
-                    }
-                }*/
-
     </script>
-</body>
-
-</html>
+</body></html>
