@@ -53,21 +53,21 @@
                     </div>
                 </div>
             </div>
-            <div class="subangi box" data-bruger="1149134224" data-brugernavn="subangis">
+            <div class="subangi box" data-bruger="1149134224" data-brugernavn="subangi">
                 <div class="textimg">
                     <div class="colorbox">
                         <h1>Subangis playliste </h1> <img src="assets/pil.svg">
                     </div>
                 </div>
             </div>
-            <div class="rachel box" data-bruger="12149118764" data-brugernavn="rachels">
+            <div class="rachel box" data-bruger="12149118764" data-brugernavn="rachel">
                 <div class="textimg">
                     <div class="colorbox">
                         <h1>Rachels playliste </h1> <img src="assets/pil-hvid.svg">
                     </div>
                 </div>
             </div>
-            <div class="rune box" data-bruger="113661608" data-brugernavn="runes">
+            <div class="rune box" data-bruger="113661608" data-brugernavn="rune">
                 <div class="textimg">
                     <div class="colorbox">
                         <h1>Runes playliste </h1> <img src="assets/pil.svg">
@@ -95,13 +95,14 @@
 
         function hvilkenPlayListe() {
             /*Sæt variablen 'lister' til den værdi data-atributten har på den specifikke box, man klikker på*/
-            lister = this.dataset.bruger;
+            brugerID = this.dataset.bruger;
+            brugerNavn = this.dataset.brugernavn;
             playListeValgt();
         }
 
         function playListeValgt() {
             /*Indsæt værdien af data-atributten i url og før over på denne side*/
-            location.href = `playlist.html?bruger=${lister}`;
+            location.href = `playlist.html?bruger=${brugerID}&brugernavn=${brugerNavn}`;
 
         }
     </script>
