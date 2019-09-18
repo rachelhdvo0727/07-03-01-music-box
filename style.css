@@ -698,9 +698,11 @@ label {
         font-weight: 700;
     }
 
+    /* det viser heller en kvadratisk end en pil
     .fa-sort-down:before {
         content: "\f0d7";
     }
+*/
 
     .dropdown-content {
         display: none;
@@ -814,8 +816,12 @@ label {
         width: 10%;
     }
 
+    .tak {
+        margin: 20vw auto;
+    }
+
     .luk {
-        top: 30vw;
+        top: 15vw;
         right: 10vw;
         width: 5vw;
     }
