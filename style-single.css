@@ -1,4 +1,4 @@
-:root {
+/*:root {
     --main-color: #6ECBD2;
     --footer-color: #F9F4CA;
     --btn-color: #DFA0C4;
@@ -18,11 +18,11 @@ img {
 body {
 
     margin: 0 auto;
-}
+}*/
 
 /***********************HEADER***************/
 
-header {
+/*header {
     background: url(assets/single_og_playlist_splash1.jpg);
     background-size: cover;
     height: 35vh;
@@ -33,10 +33,10 @@ header {
     justify-content: space-between;
 }
 
-#logo {
-    /* width: 28vw;
+#logo {*/
+/* width: 28vw;
     height: 15vw;*/
-    width: 170px;
+/*    width: 170px;
     height: 88.39px;
     margin: 1vw;
 }
@@ -137,4 +137,4 @@ pre {
     }
 
 
-}
+}*/

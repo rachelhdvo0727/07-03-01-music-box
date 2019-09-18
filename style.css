@@ -263,12 +263,13 @@ h1 {
     color: white;
     font-size: 250%;
     padding: 5vw 0 1.5vw 0vw;
+    margin: 0;
     text-align: center;
 }
 
 .brugerplaylist::first-letter {
     text-transform: uppercase;
-    /*FØrste bogstav skal med stort, da teksten bliver hentet ned fra url og derfor er med småt*/
+    /*Første bogstav skal med stort, da teksten bliver hentet ned fra url og derfor er med småt*/
 
 }
 
@@ -276,8 +277,8 @@ h1 {
     /*overskrift til genre*/
     font-family: var(--h1-h2-font);
     color: white;
-    font-size: 200%;
-    margin: 0;
+    font-size: 2rem;
+    margin-bottom: 4rem;
     padding: 1.5vw 0 1.5vw 0vw;
     text-align: center;
 }
@@ -825,6 +826,11 @@ label {
         right: 10vw;
         width: 5vw;
     }
+
+
+    .filtretnavn {
+        margin-top: -2rem;
+    }
 }
 
 
@@ -833,4 +839,5 @@ label {
     #listeindhold {
         margin: 0;
     }
+
 }
