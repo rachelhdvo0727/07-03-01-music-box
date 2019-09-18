@@ -24,7 +24,8 @@ img {
     width: 100%;
 }
 
-/************************HEADER**********************/
+/******************************FORSIDE.HTML******************************/
+/*-----------------HEADER-----------------*/
 #forside header {
     background: url(assets/forside-splash.jpg);
     background-position: 45% 30%;
@@ -40,6 +41,25 @@ img {
     margin-left: 2vw;
     pointer-events: cursor;
 
+}
+
+/*-----------------FOOTER-----------------*/
+
+
+footer {
+    background-color: var(--footer-color);
+    height: 7vh;
+    text-align: center;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*
+    display: flex;
+    justify-content: center;
+    align-items: center;
+*/
 }
 
 /*-----------------BURGERMENU--------------------*/
@@ -84,8 +104,6 @@ img {
     cursor: pointer;
 }
 
-
-
 header nav a {
     color: #000000;
     font-family: var(--h3-p-font);
@@ -117,27 +135,8 @@ header nav a:hover {
     flex-direction: column;
 }
 
-/***********************FOOTER****************************/
 
-
-footer {
-    background-color: var(--footer-color);
-    height: 7vh;
-    text-align: center;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /*
-    display: flex;
-    justify-content: center;
-    align-items: center;
-*/
-}
-
-
-/************************GRID**********************/
+/*----------------------GRID-----------------------*/
 
 .grid-container {
     display: grid;
@@ -249,7 +248,7 @@ footer {
     background-color: rgba(134, 134, 134, 0.37);
 }
 
-/********************PLAYLIST.HTML*****************************/
+/***********************PLAYLIST.HTML*****************************/
 
 h1 {
     font-family: var(--h1-h2-font);
@@ -295,10 +294,9 @@ p {
     padding: 2vw 0;
 }
 
-/*-----BODYS ELEMENTER-----*/
+/*-------------------BODYS ELEMENTER--------------------*/
 html,
 body {
-    margin: 0 auto;
     height: 100%;
 }
 
@@ -343,7 +341,6 @@ header {
 
 .playlist:hover {
     background-color: #07A0AF;
-
 }
 
 /*
@@ -371,6 +368,7 @@ header {
     color: white;
 }
 
+/*brug den samme styling til alle knapper*/
 button,
 input[type=submit] {
     background-color: var(--btn-color);
@@ -393,7 +391,6 @@ input[type=submit]:hover {
 }
 
 /*#spille-knap {
-
     position: relative;
     top: -2vw;
     left: 66vw;
@@ -422,10 +419,8 @@ input[type=submit]:hover {
     display: none;
 }
 
-
-
-/*********************************SINGLE.HTML********************************
-        /***********************HEADER***************/
+/******************************SINGLE.HTML*******************************/
+/********************HEADER***************/
 
 #single header {
     background: url(assets/single_og_playlist_splash1.jpg);
@@ -528,7 +523,111 @@ pre {
     text-align: center;
 }
 
-/**********MEDIA ONLY SCREEN*************/
+/**************************KONTAKT.HTML*****************************/
+
+#kontakt header {
+    background-image: url(assets/forside-splash.jpg);
+    background-position: 10% 80%;
+}
+
+.flexcontainer {
+    /*    margin-top: 50px;*/
+    margin: 5vw 3vw 10vw 3vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--h3-p-font);
+    margin: 0.5rem 0.5rem 1rem 1.6rem;
+    /* Jeg kunne ikke får varibalen til at virker derfor har jeg sat den ind sådan ----> Fikset*/
+
+}
+
+form {
+    padding: 0 6vw 0 0;
+}
+
+/* kan ikke finde classen i html
+.formular {
+    flex-basis: 80vw;
+}/*
+
+
+/* bliv lagt sammen med button tag*/
+/*input[type=submit] {
+    background-color: var(--headline-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+*/
+label {
+    font-family: var(--h3-p-font);
+    font-weight: 700;
+    font-size: 95%;
+}
+
+.kontkakttxt {
+    flex-basis: 80vw;
+
+    padding-bottom: 2rem
+}
+
+#popup {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    /*    background: rgba(0, 0, 0, .8);*/
+    background-color: white;
+    display: none;
+    /*    overflow: scroll;*/
+}
+
+#popup img {
+    width: 20vw;
+}
+
+.tak {
+    background-color: var(--main-color);
+    width: 70vw;
+    min-height: 12vh;
+    padding: 4vw;
+    margin: 70vw auto;
+    font-family: var(--h3-p-font);
+    font-size: 120%;
+    text-align: center;
+}
+
+.indhold {
+    width: 70vw;
+    min-height: 50vh;
+    background: #fff;
+    margin: 4rem auto;
+    padding: 10px;
+}
+
+.luk {
+    position: fixed;
+    right: 2vw;
+    top: 60vw;
+    font-size: 1.5rem;
+    width: 8vw;
+    height: 5vh;
+    /*    background-color: transparent;*/
+}
+
+/******************MEDIA ONLY SCREEN********************/
 @media only screen and (min-width: 600px) {
 
     /************FORSIDEN*********/
@@ -732,7 +831,14 @@ pre {
     .back {
         width: 2.5vw;
         display: none;
+    }
 
+    .tak {
+        margin: 35vw auto;
+    }
+
+    .luk {
+        top: 25vw;
     }
 
 }
@@ -781,98 +887,17 @@ pre {
         margin: 2vw;
 
     }*/
+    .luk {
+        top: 30vw;
+        right: 10vw;
+        width: 5vw;
+    }
 }
 
 
 
 @media screen and (min-width:1200px) {
     #listeindhold {
-
         margin: 0;
     }
-}
-
-/**********KONTAKT.HTML*********/
-
-#kontakt header {
-    background-image: url(assets/forside-splash.jpg);
-    background-position: 10% 80%;
-}
-
-
-
-.flexcontainer {
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-}
-
-input[type=text],
-select,
-textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: var(--h3-p-font);
-    margin: 0.5rem 0.5rem 1rem 1.6rem;
-    /* Jeg kunne ikke får varibalen til at virker derfor har jeg sat den ind sådan ----> Fikset*/
-
-}
-
-.formular {
-    flex-basis: 80vw;
-}
-
-
-/* bliv lagt sammen med button tag*/
-/*input[type=submit] {
-    background-color: var(--headline-color);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-*/
-label {
-    font-family: var(--h3-p-font);
-    font-weight: 700;
-    font-size: 95%;
-}
-
-.kontkakttxt {
-    flex-basis: 80vw;
-
-    padding-bottom: 2rem
-}
-
-#popup {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, .7);
-    display: none;
-    overflow: scroll;
-}
-
-#popup img {
-    width: 20vw;
-}
-
-.indhold {
-    width: 70vw;
-    min-height: 50vh;
-    background: #fff;
-    margin: 4rem auto;
-    padding: 10px;
-}
-
-.luk {
-    position: fixed;
-    right: 0;
-    font-size: 2rem;
 }
