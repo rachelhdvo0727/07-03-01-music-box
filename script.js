@@ -6,39 +6,23 @@ const sangTemplate = document.querySelector("template");
 let urlParams = new URLSearchParams(window.location.search);
 let getBruger = urlParams.get("bruger");
 let filterbruger = "alle";
-let uri = urlParams.get("uri");
+let getUri = urlParams.get("uri");
 let bruger = `spotify:user:${getBruger}`;
 
-document.addEventListener("DOMContentLoaded", start);
+document.addEventListener("DOMContentLoaded", hentJson);
 
-function start() {
-    document.querySelectorAll(".box").forEach(pBtn => {
-        pBtn.addEventListener("click", whichPlayList);
-    })
-
-    hentJson();
-}
-
-
-function whichPlayList() {
-    lister = this.dataset.bruger;
-    playListSelect();
-}
-
-
-function playListSelect() {
-    /*   lister = this.dataset.bruger;*/
-    location.href = `playlist.html?bruger=${lister}`;
-
-}
 
 async function hentJson() {
     const minJson = await fetch("https://spreadsheets.google.com/feeds/list/1Y6c_YOI5XmIz6zh6OT_943mOkupPzIyyYaDALWxi6LQ/od6/public/values?alt=json&fbclid=IwAR3GvdQvKcjYnqT18MlJN99RDpNzlUmAW68sfh6Vl2ChXgjJi_lKYb9sou8");
     sanger = await minJson.json();
     visSangListen();
-    klikFilter();
-    clickonFilterknap();
-    tilbageKlik();
+    if (window.location.href.indexOf('spotify') < 0) {
+
+
+        klikFilter();
+        clickonFilterknap();
+        tilbageKlik();
+    }
 }
 
 function clickonFilterknap() {
@@ -108,13 +92,13 @@ function filtreringGenre() {
 }
 
 function visLyrics() {
-    console.log("kage");
-    if (uri) {
+
+    if (window.location.href.indexOf('single.html') > 0) {
         document.querySelector(".back").addEventListener("click", () => {
             history.back();
         })
         sanger.feed.entry.forEach(song => {
-            if (song.gsx$uri.$t == uri) {
+            if (song.gsx$uri.$t == getUri) {
                 document.querySelector(".titel").textContent = song.gsx$navn.$t;
                 document.querySelector(".full h2").textContent = song.gsx$kunstner.$t;
                 document.querySelector(".full h3").textContent = "Album: " + song.gsx$album.$t;
