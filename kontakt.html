@@ -67,18 +67,21 @@
 
             document.querySelector(".submit").addEventListener("click", visBesked);
 
-            document.querySelector('input').setCustomValidity('Your custom validation message comes here');
-
         }
 
         function visBesked() {
+            /*Vis popup*/
             document.querySelector("#popup").style.display = "block";
-            document.querySelector(".luk").addEventListener("click", lukPopUp);
+            document.querySelector(".luk").addEventListener("click", lukPopUp); /*eventlistener på lukknappen*/
         }
 
         function lukPopUp() {
+            /*Skjul popup igen*/
             document.querySelector("#popup").style.display = "none";
-            start();
+            start(); /*Gå tilbage til start*/
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
