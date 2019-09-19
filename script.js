@@ -17,7 +17,7 @@ async function hentJson() {
     sanger = await minJson.json(); /*Henter google sheet ind som jSon asynkront og afventer indholdet, mens resten af koden kører viderer*/
     visSangListen();
     if (window.location.href.indexOf('spotify') < 0) {
-        /*Hvis url IKKE indeholder 'spotify' kald disse funktioner*/
+        /*Hvis url IKKE indeholder 'spotify' kald disse funktioner for at undgå at få fejl i det knapperne ikke findes på single.html, hvor den bruger "spotify" i url*/
 
         klikFilter();
         clickonFilterknap();
