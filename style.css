@@ -167,7 +167,7 @@ header nav a:hover {
 
 .grid-hoejre {
     /*Grid i grid for at boksene og teksten kan placeres i forhold til hinanden, men så boksene også kan placeres i forhold til hinanden individuelt*/
-    min-height: 45vw 45vw;
+    min-height: 45vw;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
@@ -803,6 +803,7 @@ label {
         padding: 1rem;
         grid-template-columns: 1fr 1fr;
         grid-gap: 1.5vw;
+        min-height: 0;
     }
 
     .indhold_boks {
