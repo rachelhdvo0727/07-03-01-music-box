@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", hentJson);
 
 async function hentJson() {
     const minJson = await fetch("https://spreadsheets.google.com/feeds/list/1Y6c_YOI5XmIz6zh6OT_943mOkupPzIyyYaDALWxi6LQ/od6/public/values?alt=json&fbclid=IwAR3GvdQvKcjYnqT18MlJN99RDpNzlUmAW68sfh6Vl2ChXgjJi_lKYb9sou8");
-    sanger = await minJson.json(); /*Henter google sheet ind som jSon asynkront*/
+    sanger = await minJson.json(); /*Henter google sheet ind som jSon asynkront og afventer indholdet, mens resten af koden kører viderer*/
     visSangListen();
     if (window.location.href.indexOf('spotify') < 0) {
         /*Hvis url IKKE indeholder 'spotify' kald disse funktioner*/
