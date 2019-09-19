@@ -63,7 +63,7 @@ function visSangListen() {
                 klon.querySelector(".album").textContent = sang.gsx$album.$t;
                 klon.querySelector(".tid").textContent = sang.gsx$varihed.$t;
                 klon.querySelector("#spille-knap").src = "assets/spille-knap.svg";
-                sangListe.appendChild(klon);
+                sangListe.appendChild(klon); /*Indsæt indholdet, så det vises*/
                 sangListe.lastElementChild.addEventListener("click", () => {
                     /*Tilføj eventlistener på det sidste barn af listen*/
 
