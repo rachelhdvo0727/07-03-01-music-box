@@ -1,6 +1,6 @@
 /*********GENERELT OG VARIABLER************/
 :root {
-    /*Variabler, så det er nemt at skifte farve på elementer med den givne variabel.*/
+    /*Variabler, så det er nemt at skifte farve eller font på elementer med den givne variabel.*/
     --main-color: #6ECBD2;
     --menu-bg-bold: #FFD744;
     --footer-color: #F9F4CA;
