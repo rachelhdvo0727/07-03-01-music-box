@@ -701,11 +701,6 @@ label {
         font-weight: 700;
     }
 
-    /* det viser heller en kvadratisk end en pil
-    .fa-sort-down:before {
-        content: "\f0d7";
-    }
-*/
 
     .dropdown-content {
         display: none;
